@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TP1</string>
+    <string name="enter_message">Enter a message</string>
+    <string name="send">Send</string>
+</resources>
