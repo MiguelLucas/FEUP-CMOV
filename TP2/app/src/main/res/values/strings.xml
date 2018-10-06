@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TP2</string>
+    <string name="name">Name:</string>
+    <string name="address">Address:</string>
+    <string name="save_btn">Save</string>
+    <string name="type">Type</string>
+    <string name="option1">Take-Out</string>
+    <string name="option2">Sit-Down</string>
+    <string name="option3">Delivery</string>
+</resources>
