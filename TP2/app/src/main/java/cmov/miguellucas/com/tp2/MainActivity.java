@@ -7,6 +7,9 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -18,6 +21,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.support.design.widget.TabLayout;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
     RestaurantAdapter adapter;
     TabLayout.Tab listTab, details;
     View tab1, tab2;
+    Restaurant currentRestaurant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +60,24 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
         tab2 = findViewById(R.id.linear_layout);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        new MenuInflater(this).inflate(R.menu.main, menu);
+        return (super.onCreateOptionsMenu(menu));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId()==R.id.toast) {
+            String message="No restaurant selected";
+            if (currentRestaurant != null)
+                message = currentRestaurant.getNotes();
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+            return(true);
+        }
+        return(super.onOptionsItemSelected(item));
+    }
+
     public void saveBtn(View view){
         EditText editText_name = findViewById(R.id.name);
         String name = editText_name.getText().toString();
@@ -62,8 +85,12 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
         EditText editText_address = findViewById(R.id.address);
         String address = editText_address.getText().toString();
 
+        EditText editText_notes = findViewById(R.id.notes);
+        String notes = editText_notes.getText().toString();
+
         RadioGroup radioGroup = findViewById(R.id.radioGroup);
         Restaurant restaurant = new Restaurant(name, address);
+        restaurant.setNotes(notes);
 
         switch (radioGroup.getCheckedRadioButtonId()) {
             case R.id.type_sit_down:
@@ -78,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
         }
         adapter.add(restaurant);
         clearKeyboard(this);   // hide the soft keyboard, if present
+        currentRestaurant = restaurant;
         listTab.select();     // switch to the list tab
     }
 
@@ -103,6 +131,7 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
             radioGroup.check(R.id.type_delivery);
         }
 
+        currentRestaurant = rest;
         details.select();
     }
 

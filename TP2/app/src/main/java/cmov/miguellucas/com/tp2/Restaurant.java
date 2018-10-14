@@ -9,6 +9,7 @@ public class Restaurant {
     private String name;
     private String address;
     private RestaurantType restaurantType;
+    private String notes;
 
     public Restaurant(String name, String address){
         this.name = name;
@@ -37,6 +38,14 @@ public class Restaurant {
 
     public void setRestaurantType(RestaurantType restaurantType) {
         this.restaurantType = restaurantType;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String name) {
+        this.notes = name;
     }
 
     @Override
