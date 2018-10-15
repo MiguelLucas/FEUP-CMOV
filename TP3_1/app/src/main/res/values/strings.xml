@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TP3</string>
+    <string name="capital">Capital (€):</string>
+    <string name="interest">Interest (%):</string>
+    <string name="duration">Duration (months):</string>
+    <string name="btn_calculate">Calculate</string>
+</resources>

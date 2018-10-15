@@ -1,149 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="cmov.miguellucas.com.tp2.MainActivity">
-
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabs"
+    android:orientation="vertical">
+    <ListView
+        android:id="@+id/listview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </android.support.design.widget.TabLayout>
-
-    <FrameLayout
+        android:layout_height="match_parent"/>
+    <TextView
+        android:id="@+id/empty_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/list_view">
-        </ListView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/linear_layout"
-            android:visibility="invisible">
-
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:stretchColumns="1">
-
-                <TableRow>
-
-                    <TextView
-                        android:id="@+id/name_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/name" />
-
-                    <EditText
-                        android:id="@+id/name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="10"
-                        android:ems="10"
-                        android:imeOptions="actionNext"
-                        android:inputType="textPersonName" />
-
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:id="@+id/address_label"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/address" />
-
-                    <EditText
-                        android:id="@+id/address"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="10"
-                        android:ems="10"
-                        android:imeOptions="actionDone" />
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:id="@+id/type_label"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/type" />
-
-                    <RadioGroup
-                        android:id="@+id/radioGroup"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkedButton="@id/type_take_out">
-
-                        <RadioButton
-                            android:id="@+id/type_take_out"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/option1" />
-
-                        <RadioButton
-                            android:id="@+id/type_sit_down"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/option2" />
-
-                        <RadioButton
-                            android:id="@+id/type_delivery"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/option3" />
-                    </RadioGroup>
-
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:id="@+id/notes_label"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/notes" />
-
-                    <EditText
-                        android:id="@+id/notes"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="10"
-                        android:ems="10"
-                        android:maxLines="2"
-                        android:imeOptions="actionDone" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <Button
-                        android:id="@+id/btn_save"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:onClick="saveBtn"
-                        android:text="@string/save_btn" />
-                </TableRow>
-            </TableLayout>
-
-        </LinearLayout>
-
-    </FrameLayout>
-
+        android:layout_height="wrap_content"
+        android:text="Empty"/>
 </LinearLayout>
