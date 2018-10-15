@@ -1,10 +1,12 @@
 package cmov.miguellucas.com.tp2;
 
+import java.io.Serializable;
+
 /**
  * Created by Miguel Lucas on 06/10/2018.
  */
 
-public class Restaurant {
+public class Restaurant implements Serializable {
 
     private String name;
     private String address;

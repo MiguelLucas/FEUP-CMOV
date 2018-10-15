@@ -61,6 +61,18 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
     }
 
     @Override
+    protected void onSaveInstanceState(Bundle state) {
+        state.putSerializable("currentRestaurant", currentRestaurant);
+        super.onSaveInstanceState(state);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle state) {
+        super.onRestoreInstanceState(state);
+        currentRestaurant = (Restaurant) state.getSerializable("currentRestaurant");
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         new MenuInflater(this).inflate(R.menu.main, menu);
         return (super.onCreateOptionsMenu(menu));

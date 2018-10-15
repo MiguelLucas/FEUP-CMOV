@@ -7,5 +7,5 @@
     <string name="option1">Take-Out</string>
     <string name="option2">Sit-Down</string>
     <string name="option3">Delivery</string>
-    <string name="notes">Notes</string>
+    <string name="notes">Notes:</string>
 </resources>
